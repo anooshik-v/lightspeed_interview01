@@ -7,7 +7,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
 
 public class DeepCopyTests {
     Man originalMan;
@@ -27,7 +26,7 @@ public class DeepCopyTests {
 
     @Test
     // Copies Man Successfully
-    public void successfulManDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
+    public void successfulManDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException {
         Man copyMan = DeepCopyUtils.deepCopy(originalMan);
         copyMan.setName("Eve");
         copyMan.setAge(25);
@@ -41,7 +40,7 @@ public class DeepCopyTests {
 
     @Test
     // Copies Book Successfully
-    public void successfulBookDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
+    public void successfulBookDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException {
         Book copyBook = DeepCopyUtils.deepCopy(originalBook);
         copyBook.setTitle("Animal Farm");
         assertEquals("1984", originalBook.getTitle());
@@ -54,7 +53,7 @@ public class DeepCopyTests {
 
     @Test
     // Copies Library Successfully
-    public void successfulLibraryDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
+    public void successfulLibraryDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException {
         Library copyLibrary = DeepCopyUtils.deepCopy(originalLibrary);
         copyLibrary.setName("Another Library");
         assertEquals("City Library", originalLibrary.getName());
@@ -64,7 +63,7 @@ public class DeepCopyTests {
 
     @Test
     // Copies Employee Successfully
-    public void successfulEmployeeDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
+    public void successfulEmployeeDeepCopy() throws InvocationTargetException, IllegalAccessException, InstantiationException {
         Employee copyEmployee = DeepCopyUtils.deepCopy(originalEmployee);
 
         copyEmployee.setName("Bob");
